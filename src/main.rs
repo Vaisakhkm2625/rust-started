@@ -7,13 +7,15 @@ use std::fs::File;
 use std::cmp::Ordering;
 
 fn main() {
-    println!("What is your name?");
+    const ONE_MIL: u32= 1_000_000;
+    const PI: f32 = 3.141592;
 
-    let mut name: String = String::new();
-    let greeting: &str = "Nice to meet you";
+    let age: &str = "47";
+    let mut age: u32 = age.trim().parse()
+        .expect("Age wasn't assigned a number");
 
-    io::stdin().read_line(&mut name)
-        .expect("Didn't recevice input");
+    age = age+1;
 
-    println!("Hello, {}! {}",name.trim_end(),greeting);
+    print!("I'm {} and I want ${}\n",age,ONE_MIL)
+
 }
